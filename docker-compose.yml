@@ -13,26 +13,28 @@ services:
       - 3306
     environment:
       MYSQL_DATABASE: salesreportdb
-      MYSQL_USER: root
-      MYSQL_PASSWORD: letmein@@
-      MYSQL_ROOT_PASSWORD: letmein@@
-      SERVICE_TAGS: dev
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: letmein
+      MYSQL_ROOT_PASSWORD: letmein
+      SERVICE_TAGS: prod
       SERVICE_NAME: mysqldb
     networks:
       - internalnet
 
   nodeapp:
     container_name: nodeappcontainer
-    build: .
+    build: . 
     image: nodeapp:v1
     environment:
       DB_HOST: mysqldb
-      DB_USER: 'root'
-      DB_PASSWORD: 'letmein@@'
+      DB_USER: admin
+      DB_PASSWORD: 'letmein'
       DB_NAME: salesreportdb
       DB_PORT: 3306
       DB_CONNECTION_LIMIT: 10
       SERVER_PORT: 3000
+      SERVICE_TAGS: prod
+      SERVICE_NAME: nodeappservice
     ports:
       - 3000:3000
     expose:

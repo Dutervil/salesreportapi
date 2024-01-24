@@ -19,13 +19,13 @@ CREATE TABLE products
 
 
 
-
-DELIMITER //
-CREATE PROCEDURE create_and_return(IN name VARCHAR(250), IN description VARCHAR(255), IN price DOUBLE, IN quantity INT)
-BEGIN
-    INSERT INTO products(name,description,price,quantity) VALUES (name,description,price,quantity);
-    SET @PRODUCT_ID = LAST_INSERT_ID();
-    SELECT * FROM products WHERE id=@PRODUCT_ID;
-
-END //
-DELIMITER ;
+# 
+# DELIMITER //
+# CREATE PROCEDURE create_and_return(IN name VARCHAR(250), IN description VARCHAR(255), IN price DOUBLE, IN quantity INT)
+# BEGIN
+#     INSERT INTO products(name,description,price,quantity) VALUES (name,description,price,quantity);
+#     SET @PRODUCT_ID = LAST_INSERT_ID();
+#     SELECT * FROM products WHERE id=@PRODUCT_ID;
+# 
+# END //
+# DELIMITER ;
