@@ -12,10 +12,10 @@ services:
     expose:
       - 3306
     environment:
-      MYSQL_DATABASE: patientsdb
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: letmein
-      MYSQL_ROOT_PASSWORD: letmein
+      MYSQL_DATABASE: salesreportdb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: letmein@@
+      MYSQL_ROOT_PASSWORD: letmein@@
       SERVICE_TAGS: dev
       SERVICE_NAME: mysqldb
     networks:
@@ -28,8 +28,8 @@ services:
     environment:
       DB_HOST: mysqldb
       DB_USER: 'root'
-      DB_PASSWORD: 'letmein'
-      DB_NAME: patients
+      DB_PASSWORD: 'letmein@@'
+      DB_NAME: salesreportdb
       DB_PORT: 3306
       DB_CONNECTION_LIMIT: 10
       SERVER_PORT: 3000
